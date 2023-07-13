@@ -1,0 +1,38 @@
+
+.main{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.form{
+max-width: 900px;
+}
+.add-task{
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+li{
+    list-style: none;
+}
+.grey{
+    font-size: 20px;
+    color: #767676;
+    max-width: 300px;
+    margin-right: 50px;
+}
+.btn{
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    width: 180px;
+    height: 50px;
+    background-color: #dbf5d5;
+    padding-bottom: 20px;
+}
+.create-task{
+    display: flex;
+    flex-direction: column;
+}
