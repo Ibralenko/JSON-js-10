@@ -1,0 +1,44 @@
+*{
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+flex-direction: column;
+}
+.container_first-line,
+.container_second-line{
+    display: flex;
+}
+.superhero{
+    max-height: 550px;
+    max-width: 410px;
+    margin: 0 auto;
+}
+.superhero-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.image{
+    width: 410px;
+    height: 250px;
+}
+.rating{
+    position: relative;
+    font-size: 30px;
+    display: inline-block;
+}
+.rating::before{
+    content: "★★★★★";
+    display: block;
+}
+.rating-item{
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row-reverse;
+}
