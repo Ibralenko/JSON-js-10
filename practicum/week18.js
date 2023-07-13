@@ -63,7 +63,7 @@ function makeSix() {
 		age: 30 }
 	localStorage.setItem('objectSix', JSON.stringify(obj));
 	console.log('Объект obj был записан в Local Storage.');
-};
+}
 
 document.querySelector('.b-6').onclick = makeSix;
 
@@ -85,7 +85,7 @@ function makeSeven() {
 		}
 	localStorage.setItem('objectSeven', JSON.stringify(obj));
 	console.log('Объект obj был записан в Local Storage.');
-};
+}
 
 document.querySelector('.b-7').onclick = makeSeven;
 
@@ -107,7 +107,7 @@ function makeEight() {
 	}
 	localStorage.setItem('objectEight', JSON.stringify(obj));
 	console.log('Объект obj был записан в Local Storage.');
-};
+}
 document.querySelector('.b-8').onclick = makeEight;
 
 
@@ -132,7 +132,7 @@ function makeTen() {
 	const arr = ["яблоко", "банан", "апельсин"];
 	localStorage.setItem('arrayTen', JSON.stringify(arr));
 	console.log('Массив arr был записан в Local Storage.');
-};
+}
 
 document.querySelector('.b-10').onclick = makeTen;
 
@@ -145,15 +145,16 @@ document.querySelector('.b-10').onclick = makeTen;
 // ]. Вызывается функция по кнопке Задание 11.
 //Подсказка: Для преобразования массива в строку используйте метод JSON.stringify()
 
+const arrayEleven = [
+	{ name: "Алиса", age: 30 },
+	{ name: "Алиса", age: 30 },
+	{ name: "Кот", age: 40 }
+];
+
 function makeEleven() {
-	const arr = [
-		{ name: "Алиса", age: 30 },
-		{ name: "Алиса", age: 30 },
-		{ name: "Кот", age: 40 }
-	];
-	localStorage.setItem('arrayEleven', JSON.stringify(arr));
+	localStorage.setItem('arrayEleven', JSON.stringify(arrayEleven));
 	console.log('Массив arr был записан в Local Storage.');
-};
+}
 
 document.querySelector('.b-11').onclick = makeEleven;
 
@@ -162,27 +163,27 @@ document.querySelector('.b-11').onclick = makeEleven;
 //Подсказка: Для преобразования строки в объект используйте метод JSON.parse()
 
 function showEleven() {
-	//Ваш код
+	const obj = JSON.parse(localStorage.getItem('arrayEleven'))
 	let output = '';
 	for (let i = 0; i < arrayEleven.length; i++) {
 		const object = arrayEleven[i];
 		for (let key in object) {
-			output += `${key} ${object[key]}`;
+			output += `${key} ${object[key]} ; `;
 		}
 	}
 	document.querySelector('.practicum12').textContent = output;
 }
 
-//добавьте слушатель события
+document.querySelector('.b-12').onclick = showEleven;
 
 //Задание 13
 //Создайте функцию showTen, которая при нажатии кнопки Задание 12 получит из Local Storage сохраннённый массив arrayTen. Выведите в элемент с классом practicum13 в формате ключ пробел значение перенос строки. Вызывается функция по кнопке Задание 13.
 //Подсказка: Для преобразования строки в объект используйте метод JSON.parse(). Для работы с массивом используйте циклы.
 
 const showTen = () => {
-	const arrayTenString = LocalStorage.getItem('arrayTen');
+	const arrayTenString = localStorage.getItem('arrayTen');
 	if (arrayTenString) {
-		//Ваш код
+		const res = JSON.parse(arrayTenString);
 		const resultElement = document.querySelector('.practicum13');
 		for (const key in arrayTen) {
 			const value = arrayTen[key];
@@ -193,7 +194,7 @@ const showTen = () => {
 	}
 };
 
-//добавьте слушатель события
+document.querySelector('.b-13').onclick = showTen;
 
 //Задание 14
 //Создайте функцию showNine, которая при нажатии кнопки Задание 14 получит из Local Storage сохраннённый массив arrayNine. Выведите в элемент с классом practicum14 в формате ключ пробел значение перенос строки. Вызывается функция по кнопке Задание 14.
