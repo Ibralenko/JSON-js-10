@@ -2,7 +2,7 @@
 //Создайте функцию makeOne которая записывает в Local Storage ключ games со значением 11. Вызывается функция по кнопке Задание 1.
 
 function makeOne() {
-	window.localStorage.setItem('games', '11')
+	window.localStorage.setItem('games', '11');
 	console.log('Задание 1-готово')
 };
 
@@ -14,52 +14,58 @@ document.querySelector('.b-1').onclick = makeOne;
 //Создайте функцию makeTwo, которая сохраняет в Local Storage строку "7,6,5". Ключ задайте самостоятельно. Вызывается функция по кнопке Задание 2.
 
 function makeTwo() {
-	//Ваш код 
+	window.localStorage.setItem('numbers', '7,6,5');
 	console.log('Строка "7,6,5" была записана в Local Storage.');
-}
+};
 
-//добавьте слушатель события
+document.querySelector('.b-2').onclick = makeTwo;
 
 //Задание 3
 //Создайте функцию makeThree, которая сохраняет в Local Storage строку "name=John, age=25". Ключ задайте самостоятельно. Вызывается функция по кнопке Задание 3.
 
 function makeThree() {
-	//Ваш код
+	window.localStorage.setItem('user1', 'name=John, age=25');
 	console.log('Строка "name=John, age=25" была записана в Local Storage.');
-}
+};
 
-//добавьте слушатель события
+document.querySelector('.b-3').onclick = makeThree;
+
+
 
 //Задание 4
 //Создайте функцию makeFour, которая сохраняет в Local Storage логическое значение true. Ключ задайте самостоятельно. Вызывается функция по кнопке Задание 4.
 
 function makeFour() {
-	//Ваш код
+	localStorage.setItem('boolean', true);
 	console.log('Логическое значение true было записано в Local Storage.');
-}
+};
 
-//добавьте слушатель события
+document.querySelector('.b-4').onclick = makeFour;
+
 
 //Задание 5
 //Создайте функцию makeFive, которая сохраняет в Local Storage значение null. Ключ задайте самостоятельно. Вызывается функция по кнопке Задание 5.
 
 function makeFive() {
-	//Ваш код
+	localStorage.setItem('null', null);
 	console.log('Значение null было записано в Local Storage.');
-}
+};
 
-//добавьте слушатель события
+document.querySelector('.b-5').onclick = makeFive;
 
 //Задание 6
 //Создайте функцию makeSix, которая сохраняет в Local Storage по ключу objectSix объект obj = { name: "Алиса", age: 30 }. Вызывается функция по кнопке Задание 6.
 //Подсказка: Для преобразования объекта в строку используйте метод JSON.stringify()
 
 function makeSix() {
-	//Ваш код
+	const obj = {
+		name: "Алиса",
+		age: 30 }
+	localStorage.setItem('objectSix', JSON.stringify(obj));
 	console.log('Объект obj был записан в Local Storage.');
-}
+};
 
-//добавьте слушатель события
+document.querySelector('.b-6').onclick = makeSix;
 
 //Задание 7
 //Создайте функцию makeSeven, которая сохраняет в Local Storage по ключу objectSeven объект obj = {
@@ -71,11 +77,17 @@ function makeSix() {
 //Подсказка: Для преобразования объекта в строку используйте метод JSON.stringify()
 
 function makeSeven() {
-	//Ваш код
+	const obj = {
+		city: "Лондон",
+		country: "Великобритания",
+		population: 8900000,
+		language: "английский"
+		}
+	localStorage.setItem('objectSeven', JSON.stringify(obj));
 	console.log('Объект obj был записан в Local Storage.');
-}
+};
 
-//добавьте слушатель события
+document.querySelector('.b-7').onclick = makeSeven;
 
 //Задание 8
 //Создайте функцию makeEight, которая сохраняет в Local Storage по ключу objectEight объект obj = {
@@ -87,48 +99,63 @@ function makeSeven() {
 //Подсказка: Для преобразования объекта в строку используйте метод JSON.stringify()
 
 function makeEight() {
-	//Ваш код
+	const obj ={
+		fruut: "Яблоко",
+		color: "красное",
+		quantity: 10,
+		price: 199
+	}
+	localStorage.setItem('objectEight', JSON.stringify(obj));
 	console.log('Объект obj был записан в Local Storage.');
-}
+};
+document.querySelector('.b-8').onclick = makeEight;
 
-//добавьте слушатель события
+
 
 //Задание 9
 //Создайте функцию makeNine, которая сохраняет в Local Storage по ключу arrayNine массив arr = [1, 2, 3, 4, 5]. Вызывается функция по кнопке Задание 9.
 //Подсказка: Для преобразования массива в строку используйте метод JSON.stringify()
 
 function makeNine() {
-	//Ваш код
+	const arr = [1 ,2, 3, 4, 5]
+	localStorage.setItem('arrayNine',JSON.stringify(arr));
 	console.log('Массив arr был записан в Local Storage.');
 }
 
-//добавьте слушатель события
+document.querySelector('.b-9').onclick = makeNine;
 
 //Задание 10
 //Создайте функцию makeTen, которая сохраняет в Local Storage по ключу arrayTen массив arr = ["яблоко", "банан", "апельсин"]. Вызывается функция по кнопке Задание 10.
 //Подсказка: Для преобразования массива в строку используйте метод JSON.stringify()
 
 function makeTen() {
-	//Ваш код
+	const arr = ["яблоко", "банан", "апельсин"];
+	localStorage.setItem('arrayTen', JSON.stringify(arr));
 	console.log('Массив arr был записан в Local Storage.');
-}
+};
 
-//добавьте слушатель события
+document.querySelector('.b-10').onclick = makeTen;
+
 
 //Задание 11
 //Создайте функцию makeEleven, которая сохраняет в Local Storage по ключу arrayEleven массив arr = [
 // { name: "Алиса", age: 30 },
-// { name: "Филин", age: 35 },
+// { name: "Алиса", age: 30 },
 // { name: "Кот", age: 40 }
 // ]. Вызывается функция по кнопке Задание 11.
 //Подсказка: Для преобразования массива в строку используйте метод JSON.stringify()
 
 function makeEleven() {
-	//Ваш код
+	const arr = [
+		{ name: "Алиса", age: 30 },
+		{ name: "Алиса", age: 30 },
+		{ name: "Кот", age: 40 }
+	];
+	localStorage.setItem('arrayEleven', JSON.stringify(arr));
 	console.log('Массив arr был записан в Local Storage.');
-}
+};
 
-//добавьте слушатель события
+document.querySelector('.b-11').onclick = makeEleven;
 
 //Задание 12
 //Создайте функцию showEleven, которая при нажатии кнопки Задание 12 получит из Local Storage сохраннённый массив arrayEleven. Выведите в practicum12 в формате ключ пробел значение. Вызывается функция по кнопке Задание 12.
@@ -213,7 +240,7 @@ document.querySelector('.b-17').addEventListener('click', showSix);
 //Задание 18
 //Создайте функцию clearLocal Storage, которая очищает весь Local Storage. Вызывается функция по кнопке Задание 18.
 
-const clearLocal Storage = () => {
+const clearLocalStorage = () => {
 	//Ваш код
 	console.log('Local Storage очищен.');
 };
