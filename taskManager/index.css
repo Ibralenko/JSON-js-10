@@ -7,7 +7,9 @@
 }
 
 .form{
-max-width: 900px;
+    background-image: url(./assets/img/paper.jpg);
+    background-size: 100%;
+max-width: 1200px;
 margin: 50px auto;
 padding: 30px;
 border: 1px  dashed rgb(8, 132, 1);
@@ -17,12 +19,17 @@ border: 1px  dashed rgb(8, 132, 1);
     display: flex;
     justify-content: space-between;
 }
+.create-task{
+    margin-bottom: 40px;
+}
 .tasks{
 display: block;
 margin-left: 0;
 }
+input{
+    width: 200px;
+}
 li{
-    list-style: none;
     margin-bottom: 10px;
     border-bottom: 1px dotted black;
     width: 200px;
@@ -34,7 +41,15 @@ li{
     max-width: 300px;
     margin-right: 50px;
 }
-
+.container-title{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.ico{
+    width: 66px;
+    height: 66px;
+}
 .btn{
     font-family: 'Montserrat', sans-serif;
     color: black;
