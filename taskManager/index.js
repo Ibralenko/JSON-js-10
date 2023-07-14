@@ -28,5 +28,7 @@ showTask()
 
 
 function clearTasks(){
-    localStorage.removeItem('tasks')
+    localStorage.removeItem('tasks');
+    tasksContainer.textContent = '';
+    hiddenEl.classList.remove('hidden');
 }
