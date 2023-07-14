@@ -31,8 +31,12 @@ li{
     height: 50px;
     background-color: #dbf5d5;
     padding-bottom: 20px;
+    cursor: pointer;
 }
 .create-task{
     display: flex;
     flex-direction: column;
+}
+.hidden{
+    display: none;
 }

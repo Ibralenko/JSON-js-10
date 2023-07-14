@@ -2,17 +2,25 @@ const tasksContainer = document.querySelector('.tasks');
 const inputTask = document.getElementById('task');
 const clearBtn = document.querySelector('.delete-btn')
 const error = document.querySelector('.error');
+const form = document.forms.taskDesk;
+const hiddenEl = document.querySelector('.notification')
 
-
-function addTask(text) {
-    if (text.value === '') {
+function addTask() {
+    if (inputTask.value === '') {
         return error.textContent = `Введите задачу`
     } else {
         let taskList = document.createElement('li')
-        taskList.textContent = text.value;
+        taskList.textContent = inputTask.value;
         tasksContainer.append(taskList);
         error.textContent = ``;
+        hiddenEl.classList.add('hidden');
+        clearBtn.removeAttribute('disabled')
+        return true;
     }
 }
 
-document.querySelector('.add-btn').onclick = addTask(inputTask);
+
+
+function checkDesk(){
+   
+}

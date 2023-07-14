@@ -12,21 +12,21 @@
 
 <body>
     <main class="main">
-        <form action="/" class="form">
+        <form action="/" class="form" name="taskDesk">
             <div class="create-task">
                 <h2 class="title">Добавить задачу</h2>
                 <p class="error"></p>
                 <div class="container">
                 <input class="add-task" type="text" name="task" id="task">
-                <input type="button" class="add-btn btn" name="add" id="add" value="Добавить">
+                <input type="button" class="add-btn btn" onclick="addTask()" name="add" id="add" value="Добавить">
             </div>
             </div>
             <div class="tasks-list">
                 <h2 class="title">Список задач</h2>
                 <div class="container">
                 <ul class="tasks"></ul>
-                <li class="notification grey">Задачи отсутстуют</li>
-                <input type="button" class="delete-btn btn" name="delete" id="delete" value="Очистить список задач" disabled>
+                <li class="notification grey" >Задачи отсутстуют</li>
+                <input type="button" class="delete-btn btn"  name="delete" id="delete" value="Очистить список задач" disabled>
             </div>
             </div>
         </form>
