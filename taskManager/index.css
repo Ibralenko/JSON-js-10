@@ -9,14 +9,22 @@
 .form{
 max-width: 900px;
 }
-.add-task{
-}
+
+
 .container{
     display: flex;
     justify-content: space-between;
 }
+.tasks{
+display: block;
+margin-left: 0;
+}
 li{
     list-style: none;
+    margin-bottom: 10px;
+    border-bottom: 1px dotted black;
+    width: 200px;
+    margin-right: 30px
 }
 .grey{
     font-size: 20px;
@@ -24,6 +32,7 @@ li{
     max-width: 300px;
     margin-right: 50px;
 }
+
 .btn{
     font-family: 'Montserrat', sans-serif;
     color: black;
@@ -33,10 +42,16 @@ li{
     padding-bottom: 20px;
     cursor: pointer;
 }
+.btn:hover{
+    opacity: 0.8;
+}
 .create-task{
     display: flex;
     flex-direction: column;
 }
 .hidden{
     display: none;
+}
+.error{
+    color: rgb(168, 37, 4);
 }

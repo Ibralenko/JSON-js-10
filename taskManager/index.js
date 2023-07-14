@@ -3,7 +3,7 @@ const inputTask = document.getElementById('task');
 const clearBtn = document.querySelector('.delete-btn')
 const error = document.querySelector('.error');
 const form = document.forms.taskDesk;
-const hiddenEl = document.querySelector('.notification')
+const hiddenEl = document.querySelector('.grey')
 
 function addTask() {
     if (inputTask.value === '') {
@@ -15,12 +15,18 @@ function addTask() {
         error.textContent = ``;
         hiddenEl.classList.add('hidden');
         clearBtn.removeAttribute('disabled')
-        return true;
-    }
+        localStorage.setItem('tasks', tasksContainer.innerHTML)
+        }
+        form.reset()
 }
 
 
+function showTask() {
+    tasksContainer.innerHTML = localStorage.getItem('tasks');
+}
+showTask()
 
-function checkDesk(){
-   
+
+function clearTasks(){
+    localStorage.removeItem('tasks')
 }
