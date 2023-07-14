@@ -20,6 +20,7 @@ border: 1px  dashed rgb(8, 132, 1);
     justify-content: space-between;
 }
 .create-task{
+    display: flex;
     margin-bottom: 40px;
 }
 .tasks{
