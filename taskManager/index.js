@@ -4,6 +4,9 @@ const clearBtn = document.querySelector('.delete-btn')
 const error = document.querySelector('.error');
 const form = document.forms.taskDesk;
 const hiddenEl = document.querySelector('.grey')
+const myNodelist = document.getElementsByTagName("li");
+
+const toDolist =[];
 
 function addTask() {
     if (inputTask.value === '') {
@@ -32,3 +35,9 @@ function clearTasks(){
     tasksContainer.textContent = '';
     hiddenEl.classList.remove('hidden');
 }
+
+// function clearAll (){
+//     if (localStorage.getItem('tasks') != undefined){
+
+//     }
+// }
