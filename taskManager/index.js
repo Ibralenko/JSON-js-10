@@ -41,6 +41,12 @@ function removeAttrDis () {
     }
 }
 
+function  removeHidden () {
+    if (localStorage.getItem('tasks') !== null){
+    return hiddenEl.classList.add('hidden')
+    }
+}
+
 function clearTasks(){
     localStorage.removeItem('tasks');
     tasksContainer.textContent = '';
@@ -48,3 +54,4 @@ function clearTasks(){
 }
 
 removeAttrDis ()
+removeHidden ()
