@@ -104,9 +104,27 @@ const data = [
 const container = document.querySelector('.cards__container')
 const arr = JSON.parse(JSON.stringify(data));
 
-function createCards (superhero){
-    const template = { }
+createListPage(arr)
+
+function createListPage(arr){
+    arr.forEach(element => {
+        createCards(element)
+    });
+}
+
+function createCards (object){
     const heroDiv = document.createElement('div')
     heroDiv.classList.add('hero_card');
-    const heroCard = `<h1 class="title"&</h1>`
-}
+    const heroCard = `
+    <h1 class="title">${object.name}</h1>
+    <p class="card__text"><b>Вселенная:</b> ${object.universe}</p>
+    <p class="card__text"><b>Альтер эго:</b> ${object.alterego}</p>
+    <p class="card__text"><b>Род деятельности:</b> ${object.occupation}</p>
+    <p class="card__text"><b>Друзья:</b> ${object.friends}</p>
+    <p class="card__text"><b>Суперсилы:</b> ${object.superpowers}</p>
+    <img  class="card__img" src="${object.url}" alt="superhero">
+    <p class="card__text"><i>${object.info}</i></p>`
+
+    heroDiv.insertAdjacentHTML('beforeend', heroCard);
+    container.appendChild(heroDiv);
+};
