@@ -123,7 +123,17 @@ function createCards (object){
     <p class="card__text"><b>Друзья:</b> ${object.friends}</p>
     <p class="card__text"><b>Суперсилы:</b> ${object.superpowers}</p>
     <img  class="card__img" src="${object.url}" alt="superhero">
-    <p class="card__text"><i>${object.info}</i></p>`
+    <p class="card__text"><i>${object.info}</i></p>
+    <fieldset class="rating">
+    <legend class="rating__caption"></legend>
+    <div class="rating__group">
+    <input class="rating__star" type="radio" name="health" value="1"  checked>
+    <input class="rating__star" type="radio" name="health" value="2"  checked>
+    <input class="rating__star" type="radio" name="health" value="3"  checked>
+    <input class="rating__star" type="radio" name="health" value="4"  checked>
+    <input class="rating__star" type="radio" name="health" value="5"  checked>
+    </div>
+    </fieldset>`
 
     heroDiv.insertAdjacentHTML('beforeend', heroCard);
     container.appendChild(heroDiv);
