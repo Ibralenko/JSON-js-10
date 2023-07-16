@@ -1,6 +1,8 @@
-const data = [
+let data = [
     {
         "name": "Бетмен",
+        "id": 1,
+        "rating": 0,
         "universe": "DC Comics",
         "alterego": "Брюс Уэйн",
         "occupation": "борец с преступностью, филантроп, миллиардер",
@@ -11,6 +13,8 @@ const data = [
     },
     {
         "name": "Супермен",
+        "id": 2,
+        "rating": 0,
         "universe": "DC Comics",
         "alterego": "Кларк Кент",
         "occupation": "борец за справедливость",
@@ -21,6 +25,8 @@ const data = [
     },
     {
         "name": "Железный человек",
+        "id": 3,
+        "rating": 0,
         "universe": "Marvel Comics",
         "alterego": "Тони Старк",
         "occupation": "гений, миллиардер, плейбой, филантроп",
@@ -31,6 +37,8 @@ const data = [
     },
     {
         "name": "Спайдер-мен/Человек-паук",
+        "id": 4,
+        "rating": 0,
         "universe": "Marvel Comics",
         "alterego": "Питер Паркер",
         "occupation": "борец за справедливость, студент, фотограф",
@@ -41,6 +49,8 @@ const data = [
     },
     {
         "name": "Капитан Америка",
+        "id": 5,
+        "rating": 0,
         "universe": "Marvel Comics",
         "alterego": "Стивен Роджерс",
         "occupation": "супер-солдат",
@@ -51,6 +61,8 @@ const data = [
     },
     {
         "name": "Тор",
+        "id": 6,
+        "rating": 0,
         "universe": "Marvel Comics",
         "alterego": "нет; полное имя — Тор Одинсон",
         "occupation": "борец за справедливость, скандинавский бог",
@@ -61,6 +73,8 @@ const data = [
     },
     {
         "name": "Халк",
+        "id": 7,
+        "rating": 0,
         "universe": "Marvel Comics",
         "alterego": "Брюс Беннер",
         "occupation": "супергерой, борец за справедливость, ученый-биохимик",
@@ -71,6 +85,8 @@ const data = [
     },
     {
         "name": "Чудо-женщина",
+        "id": 8,
+        "rating": 0,
         "universe": "DC Comics",
         "alterego": "Диана Принс",
         "occupation": "супергероиня, секретарь-референт",
@@ -81,6 +97,8 @@ const data = [
     },
     {
         "name": "Черная вдова",
+        "id": 9,
+        "rating": 0,
         "universe": "Marvel Comics",
         "alterego": "Наташа Романофф",
         "occupation": "супергероиня, шпионка",
@@ -91,6 +109,8 @@ const data = [
     },
     {
         "name": "Дэдпул",
+        "id": 10,
+        "rating": 0,
         "universe": "Marvel Comics",
         "alterego": "Уэйд Уинстон Уилсон",
         "occupation": "антигерой, наёмник",
@@ -101,12 +121,23 @@ const data = [
     }
 ]
 
-const container = document.querySelector('.cards__container')
-const arr = JSON.parse(JSON.stringify(data));
 
-createListPage(arr)
+const container = document.querySelector('.cards__container')
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const comicsLocal = localStorage.getItem('values')
+    if (!comicsLocal) {
+        localStorage.setItem('values', JSON.stringify(data))
+        return
+    }
+})
+
+
+createListPage(data)
 
 function createListPage(arr){
+    container.innerHTML = '';
     arr.forEach(element => {
         createCards(element)
     });
@@ -127,14 +158,31 @@ function createCards (object){
     <fieldset class="rating">
     <legend class="rating__caption"></legend>
     <div class="rating__group">
-    <input class="rating__star" type="radio" name="health" value="1"  checked>
-    <input class="rating__star" type="radio" name="health" value="2"  checked>
-    <input class="rating__star" type="radio" name="health" value="3"  checked>
-    <input class="rating__star" type="radio" name="health" value="4"  checked>
-    <input class="rating__star" type="radio" name="health" value="5"  checked>
+    <input class="rating__star" onChange="getValueInput(event)" name=${object.name} type="radio" value="1"checked>
+    <input class="rating__star" onChange="getValueInput(event)" name=${object.name} type="radio" value="2">
+    <input class="rating__star" type="radio" onChange="getValueInput(event)" name=${object.name} value="3">
+    <input class="rating__star" type="radio" onChange="getValueInput(event)" name=${object.name} value="4">
+    <input class="rating__star" type="radio" onChange="getValueInput(event)" name=${object.name} value="5">
     </div>
     </fieldset>`
 
     heroDiv.insertAdjacentHTML('beforeend', heroCard);
     container.appendChild(heroDiv);
 };
+
+
+function getValueInput (event){
+    const rating = event.target.value
+    const name = event.target.name;
+    const newArr = data.map(item => {
+        if(item.name = name){
+            item.rating = rating
+            console.log(rating)
+            return item
+        }return item
+    })
+    console.log(newArr)
+    localStorage.setItem('value', JSON.stringify(newArr))
+    createListPage(newArr)
+}
+
