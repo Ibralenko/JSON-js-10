@@ -80,3 +80,6 @@ li{
     color: rgb(168, 37, 4);
     font-size: 20px;
 }
+.done{
+    background-color: green;
+}

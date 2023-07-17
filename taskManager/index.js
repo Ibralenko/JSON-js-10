@@ -53,5 +53,6 @@ function clearTasks(){
     hiddenEl.classList.remove('hidden');
 }
 
+
 removeAttrDis ()
 removeHidden ()

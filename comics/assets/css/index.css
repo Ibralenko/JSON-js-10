@@ -16,6 +16,8 @@
     flex-direction: column;
     justify-content: space-between;
     border: 3px solid rgb(53, 2, 2);
+    border-radius: 7px;
+    box-shadow: 3px 3px rgb(240, 10, 10), -1em 0 .4em rgb(66, 215, 47);
 }
 .card__text{
     width: 370px;

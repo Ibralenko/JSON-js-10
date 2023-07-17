@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const comicsLocal = localStorage.getItem('values')
     if (!comicsLocal) {
         localStorage.setItem('values', JSON.stringify(data))
-        return
+        return  comicsLocal
     }
 })
 
@@ -175,7 +175,7 @@ function getValueInput (event){
     const rating = event.target.value
     const name = event.target.name;
     const newArr = data.map(item => {
-        if(item.name = name){
+        if(item.name === name){
             item.rating = rating
             console.log(rating)
             return item
